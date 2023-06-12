@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { cities } from './services/sample'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [arr,setArr] = useState<string[]>(["Çiğ Köfte"]) //<string[]> TS GenericType
+  const [title,setTitle] = useState<string|null>()
 
   //functions
   //arrow
@@ -47,6 +49,16 @@ function App() {
   arrStr.push("Çay")
   arrStr.push("Soda")
   setArr(arrStr)
+
+  cities.push(
+    {
+      name: 'Antalya',
+      nufus: 6000000,
+      plaka:7,
+      status:true
+    }
+  )
+
 },[])
  
   return (
@@ -73,9 +85,21 @@ function App() {
     <div className='col-sm-4'></div>
     </div>
       
-    {arr.map((item, index) =>{
-       return <li> {item} </li>
-    })}
+    { arr && arr.length > 0 &&     
+        <ul>
+        { arr.map( (item, index) =>
+          <li key={index}> {item} </li>
+        )}
+        </ul>
+    }
+
+    { title &&
+        <div> {title.length} </div>
+    }
+
+     {cities.map((item,index) =>
+       <div> {item.name} - {item.nufus} - {item.plaka} - {item.status.toString()}</div>
+     )}
 
     </>
   )
