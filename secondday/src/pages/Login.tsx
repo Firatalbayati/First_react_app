@@ -10,7 +10,8 @@ function Login() {
          
          localStorage.setItem("user","10")
          //window.location.href = '/dashboard' bu sayfayı tekrar yükler bunu kullanmamalıyız
-         navigate('/dashboard') 
+         const obj = {name: "Fırat" , email:"firatalbayati@gmail.com"}
+         navigate('/dashboard',{ state: obj }) 
     }
 
   return (

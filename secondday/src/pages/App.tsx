@@ -1,15 +1,21 @@
 import React from 'react'
 //Sayfalar arasında geçiş yaparken üsteki js ve diğer bilgilerin tekrar yüklenmesini engeller
 import { NavLink } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 function App() {
+
+const location = useLocation()
+console.log(location.state)
+
   return (
     <>
-    <NavLink to={'/'}>App</NavLink> 
-    <NavLink to={'/settings'}>Settings</NavLink>
-        <div>App</div>
+    <div>App</div>
+    <NavLink to={'/detail/1'}>Prod-1</NavLink> 
+    <NavLink to={'/detail/2'}>Prod-2</NavLink> 
+    <NavLink to={'/detail/3'}>Prod-3</NavLink> 
+    <NavLink to={'/detail/4'}>Prod-4</NavLink> 
     </>
-
   )
 }
 
