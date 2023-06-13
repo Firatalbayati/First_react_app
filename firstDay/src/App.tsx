@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { cities } from './services/sample'
+import Navbar from './components/Navbar'
+import Login from './components/Login'
 
 function App() {
 
@@ -61,30 +63,25 @@ function App() {
 
 },[])
  
+ const customFncSave = () => {
+ console.log("customFncSave")
+}
+
+const [search,setSearch] = useState('')
+
   return (
     <> 
 
-    <div className='row'>
-    <div className='col-sm-4'></div>
-
-    <div className='col-sm-4'>
-        <h2>Admin Login</h2>
-    <form onSubmit={(evt) => sendForm(evt)} >
-    <div className='mb-3'>
-        <input required onChange={(evt) => setEmail(evt.target.value)} type='email' className='form-control' placeholder='E-Mail' />
-        </div>
-
-        <div className='mb-3'>
-        <input required onChange={(evt) => setPassword(evt.target.value)} type='password' className='form-control' placeholder='Password' />
-        </div>
-    
-         <button className='btn btn-success' >Send</button>
-    </form>
-    </div>
-
-    <div className='col-sm-4'></div>
-    </div>
+    <Navbar setSearch={setSearch}/>
+    <Login 
+    customFncSave={customFncSave}
+    sendForm={sendForm} 
+    setEmail={setEmail} 
+    setPassword={setPassword}/>
+   
       
+      <h2>{search}</h2>
+
     { arr && arr.length > 0 &&     
         <ul>
         { arr.map( (item, index) =>
