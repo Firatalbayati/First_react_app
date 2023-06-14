@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react'
 import { login } from '../services/DummyService'
 import { Jwt } from '../models/Jwt'
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
 
+    const navigate = useNavigate()
     const [username, setUsername] = useState('')  //kminchelle
     const [password, setPassword] = useState('')  //0lelplR
 
@@ -22,9 +24,10 @@ function Login() {
         password: password
     }
     login(sendJwt).then( res =>{
-      if(res.status === 200){
+      if(res != null && res.status === 200 && res.data.token){
            sessionStorage.setItem("token",res.data.token!) //tokennı aldık ve sessionStorage içine attık
            toast.success(res.status)
+           navigate('/dashboard')
       }
         console.log(res.data.token)
     }).catch(err => {

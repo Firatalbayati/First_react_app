@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 //import pages
 import Login from './pages/Login';
 import { ToastContainer } from 'react-toastify';
+import Dashboard from './pages/Dashboard';
 
 
 const router=
@@ -13,6 +14,7 @@ const router=
 <ToastContainer />
   <Routes>
     <Route path='/' element={<Login/>} />
+    <Route path='/dashboard' element={<Dashboard/>} />
   </Routes>
 </BrowserRouter>
 
