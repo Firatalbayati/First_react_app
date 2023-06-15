@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { product_title } from '../configs/Local'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { toast } from 'react-toastify'
-import { allProducts, productSave } from '../services/DummyService'
+import { allProduct, productSave } from '../services/DummyService'
+import { Product } from '../models/Product'
 import { AllProduct, Products } from '../models/Products'
+import ProductItem from '../components/ProductItem'
 
 function Dashboard() {
 
@@ -21,13 +24,14 @@ function Dashboard() {
     },
     validationSchema: validationSchema,
     onSubmit: values => {
-        const sendObj:Products = {
+        const sendObj:Product = {
             title: values.title,
             price: values.price,
             detail: values.detail
         } 
         productSave(sendObj).then(res => {
             console.log('res', res)
+            serviceProduct()
         })
     }
   })
@@ -47,12 +51,15 @@ function Dashboard() {
 
   const [products, setProducts] = useState<Products>()
   useEffect(() => {
-
-    AllProduct().then(res => {
-        setProducts(res.data)
-    })
-    
+    serviceProduct()
   }, [])
+
+
+  const serviceProduct = () => {
+    allProduct().then(res => {
+      setProducts(res.data)
+    })
+  }
   
 
   return (
@@ -80,8 +87,14 @@ function Dashboard() {
         </div>
     </div>
 
-    { JSON.stringify(products?.products) }
-
+    <div className='row'>
+      <div>Total: {products?.total}</div>
+      <div>Items: {products?.limit}</div>
+      <hr/>
+      { products?.products.map( (item, index) => 
+        <div key={index} className='col-sm-4'><ProductItem pro={item}  /></div>
+      )}
+    </div>
     </>
   )
 }
