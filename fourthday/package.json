@@ -11,6 +11,7 @@
     "@types/node": "^16.18.36",
     "@types/react": "^18.2.12",
     "@types/react-dom": "^18.2.5",
+    "jquery": "^3.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "start": "set PORT=3013 && react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false && npm run build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,6 +47,8 @@
     ]
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/jquery": "^3.5.16",
     "@types/react-helmet": "^6.1.6"
   }
 }
