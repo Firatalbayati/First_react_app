@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -66,4 +66,35 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+.users {
+  max-width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem auto;
+}
+.users li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem 2rem;
+  border-radius: var(--borderRadius);
+  text-align: left;
+}
+.users img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+.users h5 {
+  margin-bottom: 0;
+}
+.users a {
+  color: var(--primary-500);
+  text-transform: capitalize;
 }
