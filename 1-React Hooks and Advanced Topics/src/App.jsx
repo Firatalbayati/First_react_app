@@ -17,7 +17,9 @@ import './App.css'
 //import Files from './subjects/conditional-rendering/Files/04-short-circuit-overview';
 //import Files from './subjects/conditional-rendering/Files/05-short-circuit-examples';
 //import Files from './subjects/conditional-rendering/Files/06-toggle-challenge';
-import Files from './subjects/conditional-rendering/Files/07-user-challenge';
+//import Files from './subjects/conditional-rendering/Files/07-user-challenge';
+
+//import Files from './subjects/leverage-javascript/Files/List';
 
 
 function App() {
