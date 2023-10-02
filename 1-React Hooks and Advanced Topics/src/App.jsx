@@ -21,6 +21,8 @@ import './App.css'
 
 //import Files from './subjects/leverage-javascript/Files/List';
 
+import Files from './subjects/forms/Files/01-controlled-inputs';
+
 
 function App() {
 
