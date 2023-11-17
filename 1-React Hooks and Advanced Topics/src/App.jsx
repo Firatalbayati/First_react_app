@@ -32,8 +32,10 @@ import './App.css'
 //import Files from './subjects/custom-hooks/Files/01-toggle';
 //import Files from './subjects/custom-hooks/Files/02-fetch-data';
 
-//import Files from './subjects/context-api/Files/context/Navbar';
-import Files from './subjects/context-api/Files/prop-drilling/Navbar';
+//import Files from './subjects/context-api/Files/Navbar';
+
+//import Files from './subjects/useReducer/Files/01-useReducer';
+
 
 function App() {
 
