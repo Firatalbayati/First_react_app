@@ -36,6 +36,11 @@ import './App.css'
 
 //import Files from './subjects/useReducer/Files/01-useReducer';
 
+//import Files from './subjects/performance/Files/01-lower-state/index';
+//import Files from './subjects/performance/Files/02-lower-state-challenge/index';
+//import Files from './subjects/performance/Files/03-hooks/index';
+import Files from './subjects/performance/Files/04-react-18/index';
+
 
 function App() {
 
